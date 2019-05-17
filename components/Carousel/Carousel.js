@@ -7,16 +7,22 @@ let carouselImg = carousel.querySelectorAll('img');
 let prevBtn = carousel.querySelector('.left-button');
 let nextBtn = carousel.querySelector('.right-button');
 
+// onload 
 let currentIndex = 0;
 carouselImg[currentIndex].style.display = 'block'
 
 // if statement for end of index
-//console.log(Array.from(carouselImg).includes(carouselImg[3].nextElementSibling)) // false
+// console.log(Array.from(carouselImg).includes(carouselImg[0].nextElementSibling)) // false
 
 nextBtn.addEventListener('click', () => {
     carouselImg[currentIndex].style.display = 'none';
     // targets next Index
     currentIndex += 1;
+
+    // conditional to check if carousel is on last index to switch to first index
+    if (currentIndex >= carouselImg.length) {
+        currentIndex = 0;
+    }
     carouselImg[currentIndex].style.display = 'block'
 })
 
@@ -24,16 +30,14 @@ prevBtn.addEventListener('click', () => {
     carouselImg[currentIndex].style.display = 'none';
     // targets prev Index
     currentIndex -= 1;
+
+    // conditional to check if carousel is on first index to switch to last index
+    if (currentIndex < 0) {
+        currentIndex = carouselImg.length - 1;
+        console.log(currentIndex)
+    }
     carouselImg[currentIndex].style.display = 'block'
 })
-// when page first loads, add display [0]
-// when right button is clicked, remove display [0] and add display [1]
-// when left button is clicked, remove display [1] and add display [0]
-
-
-
-
-
 
 // carouselImg.forEach(e => e.style.display = 'block');
 
