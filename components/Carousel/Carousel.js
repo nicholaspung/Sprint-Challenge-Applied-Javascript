@@ -3,6 +3,30 @@ class Carousel {
 }
 
 let carousel = document.querySelector('.carousel');
+
+let nextBtn = document.querySelector('.right-button');
+let prevBtn = document.querySelector('.left-button');
+
+// try out using flexbox order
+
+let carouselImg = carousel.querySelectorAll('img');
+
+carouselImg.forEach(e => {
+    e.style.display = 'block';
+});
+
+TweenMax.to(carouselImg[2], 2, {right: 400});
+/* If You've gotten this far, you're on your own! Although we will give you some hints:
+    1. You will need to grab a reference to the carousel, and in it grab the left and right buttons
+    2. You will need to grab a reference to all of the images
+    3. Create a current index
+    4. Those buttons are gonna need some click handlers.
+    5. Think of how you would animate this compoennt. Make the cards slide in and out, or fade. It's up to you!
+    6. Have fun!
+*/
+
+/* No animation style carousel
+let carousel = document.querySelector('.carousel');
 let carouselImg = carousel.querySelectorAll('img');
 let prevBtn = carousel.querySelector('.left-button');
 let nextBtn = carousel.querySelector('.right-button');
@@ -37,14 +61,4 @@ prevBtn.addEventListener('click', () => {
     }
     carouselImg[currentIndex].style.display = 'block'
 })
-
-// carouselImg.forEach(e => e.style.display = 'block');
-
-/* If You've gotten this far, you're on your own! Although we will give you some hints:
-    1. You will need to grab a reference to the carousel, and in it grab the left and right buttons
-    2. You will need to grab a reference to all of the images
-    3. Create a current index
-    4. Those buttons are gonna need some click handlers.
-    5. Think of how you would animate this compoennt. Make the cards slide in and out, or fade. It's up to you!
-    6. Have fun!
 */
