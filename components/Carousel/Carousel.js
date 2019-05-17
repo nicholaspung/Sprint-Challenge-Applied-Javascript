@@ -34,7 +34,6 @@ prevBtn.addEventListener('click', () => {
     // conditional to check if carousel is on first index to switch to last index
     if (currentIndex < 0) {
         currentIndex = carouselImg.length - 1;
-        console.log(currentIndex)
     }
     carouselImg[currentIndex].style.display = 'block'
 })
